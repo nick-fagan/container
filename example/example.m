@@ -15,6 +15,11 @@ cont = cont.sparse();
 
 disp( cont.only({'mark', 'brent'}) );
 
+%%  data need not be numeric
+
+cont.data = cell( cont.shape() );
+cont.data = struct( 'salaries', {40e3; 50e3; 60e3} );
+
 %%  iteration
 
 objs = cont.enumerate( 'people' );
