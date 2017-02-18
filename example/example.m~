@@ -1,0 +1,22 @@
+labels.people = { 'mark'; 'james'; 'brent' };
+labels.cities = { 'ny'; 'la'; 'sf' };
+labels.countries = { 'us'; 'canada'; 'india' };
+
+data = rand( numel(labels.people), 5 );
+
+cont = Container( data, labels );
+cont = cont.sparse();
+
+disp( cont.only({'mark', 'brent'}) );
+
+%%
+
+objs = cont.enumerate( 'people' );
+
+%%
+
+people = cont( 'people' );
+
+%%
+
+fi
