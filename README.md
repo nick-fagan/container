@@ -28,6 +28,6 @@ array_of_objects = container.enumerate( {‘some_category’, ‘some_other_cate
 
 //
 
-example.mat should give a feel for how inputs must be structured.
+`example.mat` should give a feel for how inputs must be structured.
 
 For best performance, it is recommended to call `sparse()` after instantiation – this converts the labels object to a `SparseLabels` object, which takes advantage of sparse matrices in MATLAB.

@@ -24,9 +24,10 @@ cont.data = struct( 'salaries', {40e3; 50e3; 60e3} );
 
 objs = cont.enumerate( 'people' );
 
-%%  obtain a category of labels
+%%  obtain and assign fields of labels
 
 people = cont( 'people' );
+cont( 'countries' ) = 'all__countries';
 
 %%  select certain rows
 
@@ -35,3 +36,12 @@ subset = cont(1:2);
 %%  remove
 
 removed = cont.remove( {'mark', 'la'} );
+
+%%  partition + recombine
+
+part1 = cont.only( {'mark', 'brent'} );
+part1 = part1.replace( {'mark', 'brent'}, 'group1' );
+part2 = cont.only( 'james' );
+part2 = part2.replace( 'james', 'group2' );
+
+recombined = part1.append( part2 );
